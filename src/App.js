@@ -14,27 +14,49 @@ function App() {
     <div className="App">
       <header className="header">포트폴리오</header>
       <main className="main">
-        <div className="btns">
-          <input
-            className="modify_btn"
-            type="button"
-            value="글수정"
-            onClick={() => {
-              let copy = [...title];
-              copy[0] = "제목바꿈";
-              setTite(copy);
-            }}
-          />
-          <input
-            className="modify_btn"
-            type="button"
-            value="정렬버튼"
-            onClick={() => {
-              let copy = [...title];
-              copy.sort();
-              setTite(copy);
-            }}
-          />
+        <div className="btns_wrap">
+          <div className="btns">
+            <input
+              className="modify_btn"
+              type="button"
+              value="글수정"
+              onClick={() => {
+                let copy = [...title];
+                copy[0] = "제목바꿈";
+                setTite(copy);
+              }}
+            />
+            <input
+              className="modify_btn"
+              type="button"
+              value="정렬버튼"
+              onClick={() => {
+                let copy = [...title];
+                copy.sort();
+                setTite(copy);
+              }}
+            />
+          </div>
+
+          <div className="write_input">
+            <input
+              className="write_input"
+              type="text"
+              onChange={(e) => {
+                입력값변경(e.target.value);
+              }}
+            />
+            <input
+              type="button"
+              className="write_submit"
+              value="글쓰기"
+              onClick={() => {
+                let copy = [...title];
+                copy.unshift(입력값);
+                setTite(copy);
+              }}
+            />
+          </div>
         </div>
         <div className="list">
           {title.map(function (a, i) {
@@ -76,25 +98,6 @@ function App() {
               </>
             );
           })}
-        </div>
-        <div className="write_input">
-          <input
-            className="write_input"
-            type="text"
-            onChange={(e) => {
-              입력값변경(e.target.value);
-            }}
-          />
-          <input
-            type="button"
-            className="write_submit"
-            value="글쓰기"
-            onClick={() => {
-              let copy = [...title];
-              copy.unshift(입력값);
-              setTite(copy);
-            }}
-          />
         </div>
       </main>
       {modal == true ? (
