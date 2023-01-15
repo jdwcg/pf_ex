@@ -1,18 +1,18 @@
 import { useState } from "react";
-import "./scss/main.scss";
+import "./scss/style.scss";
 import Modal from "./components/Modal";
 
 function App() {
   let [title, setTite] = useState(["제목1", "제목2", "제목3"]);
-  let [따봉, 따봉변경] = useState([0, 0, 0]);
+  let [mark, setMark] = useState([0, 0, 0]);
   let [modal, setModal] = useState(false);
   let [modalTilte, setModalTilte] = useState(0);
 
-  let [입력값, 입력값변경] = useState("");
+  let [inputVal, setInputVal] = useState("");
 
   return (
     <div className="App">
-      <header className="header">포트폴리오</header>
+      <header className="header">React CRUD</header>
       <main className="main">
         <div className="btns_wrap">
           <div className="btns">
@@ -43,7 +43,7 @@ function App() {
               className="write_input"
               type="text"
               onChange={(e) => {
-                입력값변경(e.target.value);
+                setInputVal(e.target.value);
               }}
             />
             <input
@@ -52,7 +52,7 @@ function App() {
               value="글쓰기"
               onClick={() => {
                 let copy = [...title];
-                copy.unshift(입력값);
+                copy.unshift(inputVal);
                 setTite(copy);
               }}
             />
@@ -75,12 +75,12 @@ function App() {
                   <div className="good">
                     <span
                       onClick={() => {
-                        let copy = [...따봉];
+                        let copy = [...mark];
                         copy[i] = copy[i] + 1;
-                        따봉변경(copy);
+                        setMark(copy);
                       }}
                     >
-                      ♥ {따봉[i]}
+                      ♥ {mark[i]}
                     </span>
                   </div>
                   <button
