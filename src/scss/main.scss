@@ -1,0 +1,96 @@
+@import "_modal";
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+.header {
+  background-color: navajowhite;
+  padding: 1rem;
+  font-weight: 600;
+}
+input[type="text"],
+input[type="button"],
+button {
+  padding: 0 10px;
+  &:focus {
+    border: 1px solid #aaa;
+    outline: 4px solid #eee;
+  }
+}
+button {
+  cursor: pointer;
+}
+.btns {
+  display: flex;
+  gap: 10px;
+  .modify_btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    letter-spacing: -1px;
+    font-weight: 500;
+  }
+}
+.main {
+  padding: 1rem;
+  .list {
+    .tit_wrap {
+      display: flex;
+      align-items: center;
+      padding: 10px 0 0;
+      .heading {
+        font-weight: 600;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .good {
+        cursor: pointer;
+        color: tomato;
+        display: inline-block;
+        font-size: 16px;
+        padding-left: 10px;
+      }
+    }
+    > p {
+      color: #aaa;
+      font-weight: 300;
+    }
+  }
+}
+
+.del_btn {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  padding: 4px 14px;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.write_input {
+  display: flex;
+  align-items: center;
+
+  .write_input {
+    height: 42px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .write_submit {
+    height: 42px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 0 14px;
+  }
+}
